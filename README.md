@@ -1,5 +1,3 @@
-# nm
-
 # **Gift Unboxing Animation**
 
 A beautiful, accessible gift box unboxing experience built with React and TypeScript. Features smooth animations, confetti celebration.
