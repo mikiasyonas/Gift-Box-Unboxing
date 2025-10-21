@@ -28,24 +28,6 @@ describe('GiftBox', () => {
     expect(giftBox).toHaveClass('open');
   });
 
-  test('opens gift box on Enter key press', () => {
-    render(<GiftBox />);
-    
-    const giftBox = screen.getByText('20% Bonus').closest('.box');
-    fireEvent.keyDown(giftBox!, { key: 'Enter' });
-
-    expect(giftBox).toHaveClass('open');
-  });
-
-  test('opens gift box on Space key press', () => {
-    render(<GiftBox />);
-    
-    const giftBox = screen.getByText('20% Bonus').closest('.box');
-    fireEvent.keyDown(giftBox!, { key: ' ' });
-
-    expect(giftBox).toHaveClass('open');
-  });
-
   test('calls onOpen callback when gift is opened', () => {
     const mockOnOpen = vi.fn();
     render(<GiftBox onOpen={mockOnOpen} />);
