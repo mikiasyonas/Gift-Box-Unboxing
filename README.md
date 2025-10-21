@@ -1,73 +1,172 @@
-# React + TypeScript + Vite
+# nm
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# **Gift Unboxing Animation**
 
-Currently, two official plugins are available:
+A beautiful, accessible gift box unboxing experience built with React and TypeScript. Features smooth animations, confetti celebration.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## **🚀 Quick Start**
 
-## React Compiler
+### **Prerequisites**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Node.js 18+
+- npm or yarn
 
-## Expanding the ESLint configuration
+### **Installation**
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. **Clone the repository**
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+bash
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+git clone https://github.com/mikiasyonas/Gift-Box-Unboxing
+cd gift-unboxing-animation
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+1. **Install dependencies**
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+bash
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+npm install
+```
+
+1. **Run the development server**
+
+bash
+
+```
+npm run dev
+```
+
+1. **Open your browser**
+    
+    Navigate to `http://localhost:3000` to see the application.
+    
+
+### **Running Tests**
+
+bash
+
+```
+npm test
+```
+
+### **Building for Production**
+
+bash
+
+```
+npm run build
+```
+
+## **Implementation Notes**
+
+### **Architecture & Design Decisions**
+
+**Technology Stack:**
+
+- **React 18** with TypeScript for type safety
+- **Vite** for fast development and optimized builds
+- **CSS Modules** for scoped styling
+- **React Confetti** for celebration effects
+
+**Component Structure:**
+
+text
+
+```
+src/
+├── components/
+│   └── GiftBox/
+│       ├── GiftBox.tsx      # Main component
+│       └── GiftBox.test.tsx # Unit tests
+├── App.tsx
+└── main.tsx
+```
+
+**Key Design Decisions:**
+
+1. **Custom CSS Animations**: Used over animation libraries for better performance and control
+2. **Accessibility First**: Built with screen readers and keyboard navigation in mind
+3. **Mobile-First Responsive**: Optimized for all screen sizes
+4. **Performance Optimized**: Minimal bundle size with efficient animations
+
+### **Animation Sequence**
+
+1. **Hover State**: Gentle floating effect when hovering over closed box
+2. **Click/Tap**: Lid flies off with rotation and fade-out
+3. **Reveal**: Reward text pops up with scale and bounce effects
+4. **Celebration**: Confetti rains down for 5 seconds
+5. **Continuous Animation**: Reward text hovers gently after reveal
+
+## **♿ Accessibility Features**
+
+- **Keyboard Navigation**: Full support for Enter/Space keys to open the gift
+- **Focus Management**: Clear visual focus indicators
+- **Semantic HTML**: Proper heading structure and button semantics
+
+## **📊 Performance Considerations**
+
+### **Bundle Size Optimization**
+
+- **Tree Shaking**: Only included used code from dependencies
+- **Code Splitting**: Lazy loading where applicable
+- **Asset Optimization**: Compressed images and efficient CSS
+
+### **Animation Performance**
+
+- **CSS Transforms**: Used `transform` and `opacity` for GPU-accelerated animations
+- **will-change**: Hinted browser for optimal rendering
+- **Efficient Confetti**: Limited particle count with automatic cleanup
+
+## **📦 Dependencies**
+
+### **Production Dependencies**
+
+- `react` & `react-dom` - Core framework
+- `react-confetti` - Celebration effects
+    - **Why chosen**: Lightweight, well-maintained, and performant confetti implementation
+
+### **Development Dependencies**
+
+- `@vitejs/plugin-react` - Vite React integration
+- `typescript` - Type safety
+
+## **⏱️ Time Spent & Future Improvements**
+
+### **Time Allocation (Total: ~5 hours)**
+
+- **Planning & Setup**: 45 minutes
+- **Core Animation Development**: 2 hours
+- **Accessibility Implementation**: 1 hour
+- **Testing & Polish**: 1 hour
+- **Documentation**: 15 minutes
+
+### **What I Prioritized**
+
+1. **Smooth Animations**: Professional-grade transition effects
+2. **Accessibility Compliance**: Full keyboard and screen reader support
+3. **Code Quality**: Clean, maintainable TypeScript code
+4. **User Experience**: Intuitive interactions with visual feedback
+
+### **Future Improvements (Given More Time)**
+
+1. **Sound Effects**: Optional celebratory sounds on opening
+2. **Multiple Rewards**: Different content reveals
+3. **Advanced Animations**: 3D transforms and particle effects
+4. **Theming System**: Multiple gift box designs
+5. **Analytics Integration**: Track user interactions
+6. **PWA Features**: Offline capability and install prompt
+
+## **🎥 Screen Recording**
+
+https://mikias.neetorecord.com/watch/eb3810ad-6170-48f2-bcf0-a96e38073a3b
+
+
+## **🤝 Contributing**
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Open a Pull Request
